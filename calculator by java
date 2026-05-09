@@ -3,47 +3,48 @@ class calculator
 {
 public static void main(String args [])
 {
-Scanner sc= new Scanner(System.in);
-system.out.println("enter the number");
-        int n1=sc.nextInt();
-for(int i=0;i>0;i++)
-{
-        System.out.println("enter 0 for +,1 for -,2 for *,3 for /,4 for %,5 for ^");
-         int a=sc.nextInt(); 
-        System.out.println("enter the number");
-        int n2=sc.nextInt();
-            switch(a)
-            {
-                case 0:
-                n1=n1+n2;
-                break;
-                case 1:
-                n1=n1-n2;
-                break;
-                case 2:
-                n1=n1*n2;
-                break;
-                case 3:
-                n1=n1/n2;
-                break;
-                case 4:
-                n1=n1%n2;
-                break;
-                case 5:
-                n1=Math.pow(n1,n2)  ;
-                break;
-            }      
-            system.out.println("do you want to continue? (y/n)");
-            char c=sc.next().charAt(0);
-            if(c=='n')
-            {
-                break;
-            }
-            else
-            System.out.println("result is "+n1);
-{
-}
-}
+Scanner aman = new Scanner(System.in);
+    System.out.println("enter the number");
+            double n1=aman.nextDouble();
+    for(int i=1;i>0;i++)
+    {
+            System.out.println("enter 0 for +,1 for -,2 for *,3 for /,4 for %,5 for ^");
+             int a=aman.nextInt(); 
+            System.out.println("enter the number");
+            double n2=aman.nextDouble();
+                switch(a)
+                {
+                    case 0:
+                    n1=n1+n2;
+                    break;
+                    case 1:
+                    n1=n1-n2;
+                    break;
+                    case 2:
+                    n1=n1*n2;
+                    break;
+                    case 3:
+                    n1=n1/n2;
+                    break;
+                    case 4:
+                    n1=n1%n2;
+                    break;
+                    case 5:
+                    n1=Math.pow(n1,n2) ;
+                    break;
+                }      
+                System.out.println("do you want to continue? (y/n)");
+                char c=aman.next().charAt(0);
+                if(c=='n')
+                {
+                    break;
+                }
+                else
+                System.out.println("result is "+n1);
+    {
+    }
+    }
+
 } 
 }
 
