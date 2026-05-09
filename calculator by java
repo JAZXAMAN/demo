@@ -1,50 +1,67 @@
 import java.util.*;
-class calculator
-{
-public static void main(String args [])
-{
-Scanner aman = new Scanner(System.in);
-    System.out.println("enter the number");
-            double n1=aman.nextDouble();
-    for(int i=1;i>0;i++)
-    {
-            System.out.println("enter 0 for +,1 for -,2 for *,3 for /,4 for %,5 for ^");
-             int a=aman.nextInt(); 
-            System.out.println("enter the number");
-            double n2=aman.nextDouble();
-                switch(a)
-                {
-                    case 0:
-                    n1=n1+n2;
-                    break;
-                    case 1:
-                    n1=n1-n2;
-                    break;
-                    case 2:
-                    n1=n1*n2;
-                    break;
-                    case 3:
-                    n1=n1/n2;
-                    break;
-                    case 4:
-                    n1=n1%n2;
-                    break;
-                    case 5:
-                    n1=Math.pow(n1,n2) ;
-                    break;
-                }      
-                System.out.println("do you want to continue? (y/n)");
-                char c=aman.next().charAt(0);
-                if(c=='n')
-                {
-                    break;
-                }
-                else
-                System.out.println("result is "+n1);
-    {
-    }
-    }
 
-} 
+class Calculator {
+    public static void main(String args[]) {
+        Scanner aman = new Scanner(System.in);
+
+        System.out.print("Enter the first number: ");
+        double n1 = aman.nextDouble();
+        int f=0;
+        while (true) {
+            System.out.println("\nOperations: 0 for +, 1 for -, 2 for *, 3 for /, 4 for %, 5 for ^");
+            System.out.print("Choose an operation: ");
+            char a = aman.next().charAt(0);
+
+            System.out.print("Enter the next number: ");
+            double n2 = aman.nextDouble();
+
+            switch (a) {
+                case '0':
+                    n1 = n1 + n2;
+                    break;
+                case '1':
+                    n1 = n1 - n2;
+                    break;
+                case '2':
+                    n1 = n1 * n2;
+                    break;
+                case '3':
+                    if (n2 != 0) {
+                        n1 = n1 / n2;
+                    } else {
+                        System.out.println("Error: Cannot divide by zero!");
+                    }
+                    break;
+                case '4':
+                    n1 = n1 % n2;
+                    break;
+                case '5':
+                    n1 = Math.pow(n1, n2);
+                    break;
+                default:
+                    f=1;
+                    System.out.println("Invalid operation selected.");
+                    
+            }
+
+            if(f==0)
+            {
+            System.out.println("Current Result: " + n1);  
+            }   
+            
+
+            System.out.println("\nDo you want to perform another operation? (y/n)");
+            char c = aman.next().toLowerCase().charAt(0);
+
+            if (c == 'n') {
+                System.out.println("Final total is: " + n1);
+                break; 
+            }
+        }
+        
+        aman.close(); // Good practice to close the scanner
+    }
 }
+
+
 
